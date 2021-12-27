@@ -8,6 +8,12 @@ function App() {
       <Container>
         <header> dictionary app</header>
         <Dictionary />
+        <a
+          href="https://github.com/Rorokoo/dictionary-react"
+          className="gitLink"
+        >
+          link to project
+        </a>
       </Container>
     </div>
   );
