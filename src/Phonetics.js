@@ -6,7 +6,7 @@ export default function Phonetics(props) {
   console.log(props.phonetics);
   return (
     <div>
-      <a href={props.phonetics[0].audio} target="_blank">
+      <a href={props.phonetics[0].audio} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faVolumeUp} />
       </a>
     </div>
