@@ -3,7 +3,6 @@ import Synonyms from "./Synonyms";
 
 export default function Meaning(props) {
   let definitions = props.meaning.definitions;
-  console.log(definitions);
 
   return (
     <div>
@@ -11,7 +10,9 @@ export default function Meaning(props) {
       {definitions.map(function (definition, index) {
         return (
           <div key={index}>
-            <p>{definition.definition}</p>
+            <p>
+              {index + 1}.{definition.definition}
+            </p>
             <em>
               <b>example: </b>
               {definition.example}
