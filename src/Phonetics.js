@@ -3,12 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVolumeUp } from "@fortawesome/free-solid-svg-icons";
 
 export default function Phonetics(props) {
-  console.log(props.phonetics);
+  function play(event) {
+    event.preventDefault();
+    let audio = new Audio(props.phonetics[0].audio);
+    audio.play();
+  }
+
   return (
     <div>
-      <a href={props.phonetics[0].audio} target="_blank" rel="noreferrer">
-        <FontAwesomeIcon icon={faVolumeUp} />
-      </a>
+      <button onClick={play}>
+        <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+      </button>
     </div>
   );
 }
