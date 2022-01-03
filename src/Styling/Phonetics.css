@@ -1,0 +1,17 @@
+.soundButton {
+  display: inline-block;
+  border-width: 0px;
+  padding: 6px 10px;
+  position: relative;
+  bottom: 7px;
+  margin-right: 10px;
+  border-radius: 20px;
+  border-color: white;
+  color: blue;
+  transition: all 150ms ease-in-out;
+}
+
+.soundButton:hover {
+  color: white;
+  background: rgba(0, 0, 255, 0.7);
+}

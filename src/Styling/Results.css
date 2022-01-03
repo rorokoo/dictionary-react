@@ -1,0 +1,11 @@
+.word {
+  display: inline-block;
+  width: 50px;
+
+  font-size: 40px;
+}
+
+.pronounce {
+  font-size: 20px;
+  padding-left: 25px;
+}

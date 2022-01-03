@@ -1,18 +1,28 @@
 import React from "react";
-import "./Synonyms.css";
+import "./Styling/Synonyms.css";
 
 export default function Synonyms(props) {
-  if (props.synonyms.length > 0) {
+  let synonyms = props.synonyms;
+
+  if (synonyms.length > 0) {
     return (
-      <ul>
+      <ul className="Synonyms">
         <br />
         <b>Synonyms: {"  "}</b>
-        {props.synonyms.map(function (synonym, index) {
-          return (
-            <li className="synonym" key={index}>
-              {synonym},
-            </li>
-          );
+        {synonyms.map(function (synonym, index) {
+          if (index < synonyms.length - 1) {
+            return (
+              <li className="synonym" key={index}>
+                {synonym},
+              </li>
+            );
+          } else {
+            return (
+              <li className="synonym" key={index}>
+                {synonym}
+              </li>
+            );
+          }
         })}
       </ul>
     );
