@@ -5,14 +5,13 @@ import Results from "./Results";
 import "./Styling/Dictionary.css";
 
 export default function Dictionary() {
-  let [keyword, setKeyword] = useState("sunset");
+  let [keyword, setKeyword] = useState(null);
   let [results, setResults] = useState(null);
-  let [ready, setReady] = useState(false);
+
   let [photos, setPhotos] = useState(null);
 
   function handleDictionaryResponse(response) {
     setResults(response);
-    setReady(true);
   }
 
   function handleImgResponse(response) {
@@ -37,35 +36,29 @@ export default function Dictionary() {
     setKeyword(event.target.value);
   }
 
-  if (ready) {
-    return (
-      <div>
-        <em className="instruction"> search for a word...</em>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formSearch">
-            <Form.Control
-              type="search"
-              onChange={handleKeywordChange}
-              defaultValue="sunset"
-            />
-          </Form.Group>
-        </Form>
+  return (
+    <div>
+      <Form onSubmit={handleSubmit} autocomplete="off">
+        <Form.Group className="mb-3" controlId="formSearch">
+          <Form.Control
+            type="search"
+            onChange={handleKeywordChange}
+            placeholder="search for a word..."
+          />
+        </Form.Group>
+      </Form>
 
-        <Results results={results} photos={photos} />
-        <div className="gitLink">
-          <a
-            href="https://github.com/Rorokoo/dictionary-react"
-            target="_blank"
-            rel="noreferrer"
-          >
-            open-source code
-          </a>
-          &nbsp;by Roni Siles
-        </div>
+      <Results results={results} photos={photos} />
+      <div className="gitLink">
+        <a
+          href="https://github.com/Rorokoo/dictionary-react"
+          target="_blank"
+          rel="noreferrer"
+        >
+          open-source code
+        </a>
+        &nbsp;by Roni Siles
       </div>
-    );
-  } else {
-    getResponse();
-    return null;
-  }
+    </div>
+  );
 }
