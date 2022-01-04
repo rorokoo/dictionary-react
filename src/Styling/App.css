@@ -1,3 +1,10 @@
+.App {
+  max-width: 960px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
 .App header {
   font-size: 60px;
   width: 380px;
@@ -13,4 +20,5 @@
 
 .App.gitLink {
   font-size: 20px;
+  padding-bottom: 30px;
 }

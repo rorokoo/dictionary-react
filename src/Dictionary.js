@@ -8,15 +8,24 @@ export default function Dictionary() {
   let [keyword, setKeyword] = useState("sunset");
   let [results, setResults] = useState(null);
   let [ready, setReady] = useState(false);
+  let [photos, setPhotos] = useState(null);
 
-  function handleResponse(response) {
+  function handleDictionaryResponse(response) {
     setResults(response);
     setReady(true);
   }
 
+  function handleImgResponse(response) {
+    setPhotos(response.data.photos);
+  }
+
   function getResponse() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
+    axios.get(apiUrl).then(handleDictionaryResponse);
+    const apiKey = "563492ad6f91700001000001cfc9acc2bae94115b9f0e329fa118105";
+    const apiPicsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=3`;
+    let headers = { Authorization: `Bearer ${apiKey}` };
+    axios.get(apiPicsUrl, { headers: headers }).then(handleImgResponse);
   }
 
   function handleSubmit(event) {
@@ -29,7 +38,6 @@ export default function Dictionary() {
   }
 
   if (ready) {
-    console.log(true);
     return (
       <div>
         <em className="instruction"> search for a word...</em>
@@ -43,12 +51,20 @@ export default function Dictionary() {
           </Form.Group>
         </Form>
 
-        <Results results={results} />
+        <Results results={results} photos={photos} />
       </div>
     );
   } else {
-    console.log(false);
     getResponse();
-    return "Loading...";
+    return (
+      <div>
+        <em className="instruction"> search for a word...</em>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formSearch">
+            <Form.Control type="search" onChange={handleKeywordChange} />
+          </Form.Group>
+        </Form>
+      </div>
+    );
   }
 }

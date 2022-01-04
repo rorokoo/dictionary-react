@@ -19,8 +19,10 @@ function App() {
         <a
           href="https://github.com/Rorokoo/dictionary-react"
           className="gitLink"
+          target="_blank"
+          rel="noreferrer"
         >
-          link to project
+          This project was coded by Roni Siles and is open-sourced on GitHub
         </a>
       </Container>
     </div>

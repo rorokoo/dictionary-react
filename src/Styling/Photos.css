@@ -1,0 +1,6 @@
+.picture {
+  width: 250px;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 20px auto;
+}
