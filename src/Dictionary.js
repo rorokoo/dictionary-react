@@ -52,19 +52,20 @@ export default function Dictionary() {
         </Form>
 
         <Results results={results} photos={photos} />
+        <div className="gitLink">
+          <a
+            href="https://github.com/Rorokoo/dictionary-react"
+            target="_blank"
+            rel="noreferrer"
+          >
+            open-source code
+          </a>
+          &nbsp;by Roni Siles
+        </div>
       </div>
     );
   } else {
     getResponse();
-    return (
-      <div>
-        <em className="instruction"> search for a word...</em>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formSearch">
-            <Form.Control type="search" onChange={handleKeywordChange} />
-          </Form.Group>
-        </Form>
-      </div>
-    );
+    return null;
   }
 }

@@ -2,4 +2,12 @@
   opacity: 0.8;
   font-size: 20px;
   padding-left: 5px;
+  padding-bottom: 10px;
+}
+
+.gitLink {
+  font-size: 15px;
+  display: block;
+  margin: 0 auto;
+  width: 250px;
 }
