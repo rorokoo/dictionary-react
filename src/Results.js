@@ -14,6 +14,16 @@ export default function Results(props) {
         <h3 className="pronounce">/{props.results.data[0].phonetic}/</h3>
         <Meanings meanings={props.results.data[0].meanings} />
         <Photos photos={props.photos}></Photos>
+        <div className="gitLink">
+          <a
+            href="https://github.com/Rorokoo/dictionary-react"
+            target="_blank"
+            rel="noreferrer"
+          >
+            open-source code
+          </a>
+          &nbsp;by Roni Siles
+        </div>
       </div>
     );
   } else {

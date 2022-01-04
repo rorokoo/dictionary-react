@@ -49,16 +49,6 @@ export default function Dictionary() {
       </Form>
 
       <Results results={results} photos={photos} />
-      <div className="gitLink">
-        <a
-          href="https://github.com/Rorokoo/dictionary-react"
-          target="_blank"
-          rel="noreferrer"
-        >
-          open-source code
-        </a>
-        &nbsp;by Roni Siles
-      </div>
     </div>
   );
 }
