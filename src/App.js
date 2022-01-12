@@ -10,7 +10,7 @@ function App() {
       <Container>
         <header>
           {" "}
-          Dictionary
+          English-Dictionary
           <span className="icon">
             <FontAwesomeIcon icon={faBook} />
           </span>

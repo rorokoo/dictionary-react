@@ -7,6 +7,7 @@ import Meanings from "./Meanings";
 
 export default function Results(props) {
   if (props.results) {
+    console.log(props.results.data[0].word);
     return (
       <div className="Results">
         <Phonetics phonetics={props.results.data[0].phonetics} />
