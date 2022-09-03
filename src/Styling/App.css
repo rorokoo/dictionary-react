@@ -17,3 +17,14 @@
 .icon {
   margin-left: 25px;
 }
+
+@media (min-width: 320px) and (max-width: 641px) {
+  html,
+  body {
+    width: 100vw;
+  }
+  .App header {
+    width: 100%;
+    text-align: center;
+  }
+}

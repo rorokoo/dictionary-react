@@ -48,7 +48,7 @@ export default function Dictionary() {
   return (
     <div>
       <Form onSubmit={handleSubmit} autoComplete="off">
-        <Form.Group className="mb-3" controlId="formSearch">
+        <Form.Group controlId="formSearch">
           <Form.Control
             type="search"
             onChange={handleKeywordChange}

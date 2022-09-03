@@ -16,3 +16,9 @@
   margin: 0 auto;
   width: 250px;
 }
+
+@media (min-width: 320px) and (max-width: 641px) {
+  .gitLink {
+    display: none;
+  }
+}
